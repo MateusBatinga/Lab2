@@ -4,5 +4,7 @@ public class Descanso {
     private static void defineHorasDescanso(int valor) {
     }
     defineNumeroSemanas(valor: int)
-    public Descanso()
+    public Descanso() {
+
+    }
 }
