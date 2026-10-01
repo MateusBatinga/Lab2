@@ -16,9 +16,9 @@ public class Descanso {
 
     public String getStatusGeral() {
         if (horasDescanso/numeroSemana >= 26) {
-            System.out.println("Descansado");
+            return "Descansado";
         } else {
-            System.out.println("Cansado");
+            return "Cansado";
         }
     }
 
