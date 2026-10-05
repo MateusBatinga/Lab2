@@ -7,4 +7,11 @@ public class Resumo {
         this.resumo = resumo;
     }
 
+    public String getTema() {
+        return this.tema;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
 }
