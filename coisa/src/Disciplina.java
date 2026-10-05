@@ -18,6 +18,7 @@ public class Disciplina {
 
     public void cadastraNota(int nota, double valorNota) {
         this.notas[nota] = valorNota;
+        total += valorNota
     }
 
     public boolean aprovado(){
