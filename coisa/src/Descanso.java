@@ -2,11 +2,14 @@ public class Descanso {
     private int horasDescanso;
     private int numeroSemana;
 
+    /* Construtor do objeto "Descanso".
+     *
+     */
     public Descanso() {
         this.horasDescanso = 0;
-        this.numeroSemana = 0;
+        this.numeroSemana = 1;
     }
-    public static void defineHorasDescanso(int valor) {
+    public void defineHorasDescanso(int valor) {
         this.horasDescanso = valor;
     }
 
@@ -15,11 +18,12 @@ public class Descanso {
     }
 
     public String getStatusGeral() {
-        if (horasDescanso/numeroSemana >= 26) {
-            return "Descansado";
-        } else {
-            return "Cansado";
+        if ((this.horasDescanso / this.numeroSemana) < 26){
+            return "cansado";
+        }else {
+            return "descansado";
         }
     }
 
 }
+// Falta fazer apenas o javadoc, se elas pedirem.

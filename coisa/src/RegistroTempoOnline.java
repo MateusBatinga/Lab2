@@ -10,6 +10,7 @@ public class RegistroTempoOnline {
         this.nomeDisciplina = materia;
     }
 
+
     public void adicionaTempoOnline(int tempo) {
         this.tempoOnline += tempo;
     }

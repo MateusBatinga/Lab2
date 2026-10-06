@@ -11,7 +11,7 @@ public class Resumo {
         return this.tema;
     }
 
-    public String getResumo() {
+    public String getConteudo() {
         return resumo;
     }
 }

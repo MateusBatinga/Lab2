@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class Disciplina {
     private String nomeDisciplina;
     private int horasEstudo;
@@ -10,6 +8,7 @@ public class Disciplina {
     public Disciplina(String disciplina) {
         this.nomeDisciplina = disciplina;
         this.notas = new double[]{0,0,0,0};
+        this.horasEstudo = 0;
     }
 
     public void cadastraHoras(int horas) {
@@ -17,8 +16,8 @@ public class Disciplina {
     }
 
     public void cadastraNota(int nota, double valorNota) {
-        this.notas[nota] = valorNota;
-        total += valorNota
+        this.notas[nota-1] = valorNota;
+        total += valorNota;
     }
 
     public boolean aprovado(){
