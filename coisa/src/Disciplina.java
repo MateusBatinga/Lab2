@@ -26,6 +26,7 @@ public class Disciplina {
 
     @Override
     public String toString() {
-        return this.nomeDisciplina + " " + this.horasEstudo + "" + (this.total/4) + this.notas;
+        double media = (notas[0] + notas[1] + notas[2] + notas[3]) / 4;
+        return this.nomeDisciplina + " " + this.horasEstudo + " " + media + " " + "[" + notas[0] + "," + " " + notas[1] + "," + " " + notas[2] + "," + " " + notas[3] + "]";
     }
 }
