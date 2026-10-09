@@ -20,7 +20,7 @@ public class RegistroResumos {
     }
 
     /**
-     * Cria e adiciona os resumos a partri do tema e o resumo.
+     * Cria e adiciona os resumos a partir do tema e o conteudo.
      *
      * @param tema tema do resumo.
      * @param conteudo conteudo do tema.
@@ -32,17 +32,23 @@ public class RegistroResumos {
     }
 
     /**
+     * Retorna resumos cadastrados na forma estruturada de expor;
      *
-     *
-     * @return
+     * @return tema e conteudo dos resumos, separados por ":".
      */
     public String[] pegaResumos(){
-        String[] baseResumos = new String[conta()];
-        for (int i = 0; i < conta(); i++){
+        String[] baseResumos = new String[pegaPosicao()];
+        for (int i = 0; i < pegaPosicao(); i++){
             baseResumos[i] = this.resumos[i].getTema() + ": " + this.resumos[i].getConteudo();
         }
         return baseResumos;
     }
+
+    /**
+     * organiza a forma de saida dos resumos e os retorna.
+     *
+     * @return Retorna a quantidade de resumo cadastrados
+     */
     public String imprimeResumos(){
         for(int i = 0; i < posicao; i++){
             if(i == 0){this.saidaTemas = this.resumos[i].getTema();}
@@ -50,11 +56,24 @@ public class RegistroResumos {
         }
         return "- " + posicao + " resumo(s) cadastrado(s) \n" + "- " + this.saidaTemas;
     }
-    public int conta(){
+
+    /**
+     * Conta a quantidade atual de resumo adicionado.
+     *
+     * @return a posicao do resumo.
+     */
+    public int pegaPosicao(){
         if(posicao >= this.resumos.length){return this.resumos.length;}
         else{return posicao;}
 
     }
+
+    /**
+     * Verifica se há resumo ou não.
+     *
+     * @param tema do resumo verificado.
+     * @return True caso tenha o resumo e caso siga "operando" (não tem)! false
+     */
     public boolean temResumo(String tema){
         for(int i = 0; i < posicao; i++){
             if(tema.equals(this.resumos[i].getTema())){return true;}

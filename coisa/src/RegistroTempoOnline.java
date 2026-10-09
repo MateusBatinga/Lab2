@@ -53,7 +53,7 @@ public class RegistroTempoOnline {
     /**
      * Exibe a representação do tempo online registrado.
      *
-     * @return nome da disciplina, tempo online e tempo online esperado com espaços e /.
+     * @return nome da disciplina, tempo online e tempo online esperado; com espaços e "/".
      */
     @Override
     public String toString() {
