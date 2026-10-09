@@ -14,7 +14,5 @@ public class Resumo {
     public String getConteudo() {
         return resumo;
     }
-    public String[] busca(String chaveDeBusca) {
-
-    }
+    //public String[] busca(String chaveDeBusca) {}
 }

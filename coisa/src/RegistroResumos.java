@@ -1,25 +1,47 @@
-//
+/**
+ * Representa o registro dos resumos do aluno.
+ *
+ * @author Mateus Batinga Medeiros.
+ */
 public class RegistroResumos {
 
     private Resumo[] resumos;
     private int posicao;
     private String saidaTemas;
 
+    /**
+     * Constrói o registrador de resumos.
+     *
+     * @param numeroDeResumos quantidade de resumos maximos.
+     */
     public RegistroResumos(int numeroDeResumos){
         this.resumos = new Resumo[numeroDeResumos];
         this.posicao = 0;
     }
+
+    /**
+     * Cria e adiciona os resumos a partri do tema e o resumo.
+     *
+     * @param tema tema do resumo.
+     * @param conteudo conteudo do tema.
+     */
     public void adiciona(String tema, String conteudo){
         this.resumos[posicao % this.resumos.length] = new Resumo(tema, conteudo);
 
         posicao++;
     }
+
+    /**
+     *
+     *
+     * @return
+     */
     public String[] pegaResumos(){
-        String[] tempResumos = new String[conta()];
+        String[] baseResumos = new String[conta()];
         for (int i = 0; i < conta(); i++){
-            tempResumos[i] = this.resumos[i].getTema() + ": " + this.resumos[i].getConteudo();
+            baseResumos[i] = this.resumos[i].getTema() + ": " + this.resumos[i].getConteudo();
         }
-        return tempResumos;
+        return baseResumos;
     }
     public String imprimeResumos(){
         for(int i = 0; i < posicao; i++){
