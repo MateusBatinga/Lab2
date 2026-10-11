@@ -34,9 +34,13 @@ Disciplina
 - nomeDisciplina:String
 - horasEstudo:int
 - notas:double[]
-- total:doubl
+- total:double
+- pesos:int[]
+- media:double
 ---
 + Disciplina(String:disciplina)
++ Disciplina(String:disciplina, int:numNotas)
++ Disciplina(String:disciplina,int:numNotas,int[]:pesos)
 + cadastraHoras(int:horas):void
 + cadastraNota(int:nota,double:valorNota):void
 + aprovado():boolean
@@ -56,7 +60,7 @@ composes Resumo
 + imprimeResumos():String
 + conta() : int
 + temResumo(String:tema):boolean
-+ Resumo():void
++ busca(String:chavebusca):String[]
 ---
 
 Resumo
