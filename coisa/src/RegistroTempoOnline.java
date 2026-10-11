@@ -42,7 +42,7 @@ public class RegistroTempoOnline {
     }
 
     /**
-     * Verifica se o tempo online foi esparado.
+     * Verifica se o tempo online foi espenrado.
      *
      * @return True caso o tempo passado seja maior ou igual ao que é esparado.
      */

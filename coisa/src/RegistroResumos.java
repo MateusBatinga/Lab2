@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Representa o registro dos resumos do aluno.
  *
@@ -37,8 +39,8 @@ public class RegistroResumos {
      * @return tema e conteudo dos resumos, separados por ":".
      */
     public String[] pegaResumos(){
-        String[] baseResumos = new String[pegaPosicao()];
-        for (int i = 0; i < pegaPosicao(); i++){
+        String[] baseResumos = new String[conta()];
+        for (int i = 0; i < conta(); i++){
             baseResumos[i] = this.resumos[i].getTema() + ": " + this.resumos[i].getConteudo();
         }
         return baseResumos;
@@ -62,7 +64,7 @@ public class RegistroResumos {
      *
      * @return a posicao do resumo.
      */
-    public int pegaPosicao(){
+    public int conta(){
         if(posicao >= this.resumos.length){return this.resumos.length;}
         else{return posicao;}
 
@@ -79,6 +81,32 @@ public class RegistroResumos {
             if(tema.equals(this.resumos[i].getTema())){return true;}
         }
         return false;
+    }
+
+    /**
+     * Busca uma determinada palavra nos resumos cadastrados
+     *
+     * @param chaveDeBusca a palavra a ser pesquisada em todos os resumos
+     * @return array com os temas que possuem a chave de busca presente no resumo, em ordem lexicográfica.
+     */
+    public String busca(String chaveDeBusca) {
+        int cont = 0;
+        String[] saidaTempor = new String[conta()];
+        for(int i = 0; i < posicao; i++){
+            String[] conteudoTempor = resumos[i].getConteudo().toLowerCase().split(" ");
+                    for(String palavra:conteudoTempor){
+                        if(palavra.toLowerCase().equals(chaveDeBusca.toLowerCase())) {
+                            saidaTempor[i] = resumos[i].getTema();
+                            cont++;
+                        }
+            }
+        }
+        String[] saidaDefi = new String[cont];
+        for(int i = 0; i < cont; i++){
+             saidaDefi[i] = saidaTempor[i];
+        }
+        Arrays.sort(saidaDefi);
+        return Arrays.toString(saidaDefi);
     }
 
 }
